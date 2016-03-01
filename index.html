@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>慧车宝</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: #f9cdad;">
+	<div class="top">
+		<img src="images/index_01.jpg" alt="" />
+		<img src="images/index_02.jpg" alt="" />
+		<img src="images/index_03.jpg" alt="" />
+		<img src="images/index_04.jpg" alt="" />
+		<img src="images/index_05.jpg" alt="" />
+		<img src="images/index_06.jpg" alt="" />
+	</div>
+	<div class="txt">
+		<img src="images/index_07.jpg" alt="" />
+		<img src="images/index_08.jpg" alt="" />
+		<img src="images/index_09.jpg" alt="" />
+		<div class="wenAn">
+			<p>全城热恋季，期待遇到你，快来爱我吧~！</p>
+			<p>机缘巧“合”画爱心，完美度得分最高的前三名可得爱心大奖。( 以时间先后顺序前三名为准）</p>
+			<ul>
+				<li>示爱时间：2月13日——2月15日</li>
+				<li>示爱方法：活动页面输入手机号开始画爱心，将完成的一半爱心发送给心爱的TA合成一个圆满的心即为成功。</li>
+				<li>示爱礼品：（暂定）</li>
+			</ul>
+		</div>
+	</div>
+	<div class="bottom">
+		<img src="images/index_10.jpg" alt="" />
+		<div class="tel"><input type="tel" name="mobileAccount" id="mobileAccount" placeholder="输入手机号表达爱意吧" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off" value="" /></div>
+		<div class="reg"><a href="javascript:void(0)">开始画爱心</a></div>
+	</div>
+    <div class="mini_bd"></div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		//提交手机号
+		$(".reg a").click(function(){
+			// 手机号错误
+			var mobilePhone = document.getElementById("mobileAccount").value;
+			if(mobilePhone==""  || mobilePhone.length != 11 || !checkPhone(mobilePhone)){
+				$(".mini_bd").show();
+				$(".mini_bd").html("请输入正确的手机号");
+				$(".mini_bd").delay(300);
+				$(".mini_bd").fadeOut(700);
+			}
+			else{
+				//手机号正确
+				console.log("ok");
+				window.location.href = 'draw.html';
+			}
+		});
+		//验证电话号码
+		function checkPhone(s) {
+			var regu = /^13[0-9]{1}[0-9]{8}$|15[012356789]{1}[0-9]{8}$|18[0123456789]{1}[0-9]{8}$|14[57]{1}[0-9]{8}$|17[0678]{1}[0-9]{8}$/;
+			if (regu.test(s)) {return true;}
+			else {return false;}
+		}
+	</script>
+</body>
+</html>
