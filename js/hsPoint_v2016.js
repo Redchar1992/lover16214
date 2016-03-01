@@ -1,6 +1,6 @@
 $(function(){
 	
-	var stt = 0;//画左半边为0，右半边为1。
+	var stt = 1;//画左半边为0，右半边为1。
 
 	//全局控制
 	var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
